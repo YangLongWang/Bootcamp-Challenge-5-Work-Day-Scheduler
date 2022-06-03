@@ -1,6 +1,17 @@
-function dateTime() {
-    document.querySelector("#currentDay").innerHTML = dayjs().format('MMM d dddd, h:mmA');
-}
+$("#currentDay").html(dayjs().format('MMM d dddd, h:mmA'));
 
 
-dateTime();
+
+
+
+
+
+
+
+
+
+
+// function dateTime() {
+//     document.querySelector("#currentDay").innerHTML = dayjs().format('MMM d dddd, h:mmA');
+// }
+// dateTime();
