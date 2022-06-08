@@ -46,13 +46,14 @@ $(".time-block").each(function() {
 // event.preventDefault();
 
 // after clicking the button, the info can save into localstorage 
-
-
-
 var saveBtn = $(".saveBtn").on("click", function() {
     var time = $(this).parent().attr("data-hour");
     var input = $(this).siblings(".description").val();
-
+    if (!input) {
+        alert("Please enter something.");
+    } else {
+        alert("The text is saved!");
+    }
     localStorage.setItem(time, input);
 });
 
