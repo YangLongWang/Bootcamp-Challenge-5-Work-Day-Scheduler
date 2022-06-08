@@ -51,6 +51,7 @@ var saveBtn = $(".saveBtn").on("click", function() {
     var input = $(this).siblings(".description").val();
     if (!input) {
         alert("Please enter something.");
+        time = "";        
     } else {
         alert("The text is saved!");
     }
