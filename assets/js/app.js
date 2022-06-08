@@ -1,15 +1,15 @@
 // day.js display date
 var dayNtime = $("#currentDay").text(dayjs().format('MMM D dddd, h:mmA'));
 var input = $("textarea");
-var tasks = [];
 
+var tapid = 0;
 
 // according to time show different color block
 $(".time-block").each(function() {
     // toNumber 24hours('H')
     var nowHour = parseInt(dayjs().format('H'));     
     // toNumber time-block
-    var timeBlock = parseInt($(this).attr("id")); 
+    var timeBlock = parseInt($(this).attr("data-hour")); 
     if (timeBlock > nowHour) { 
         // future show green
         $(this).toggleClass("future");
@@ -26,47 +26,42 @@ $(".time-block").each(function() {
 });
 
 // create content
-$("textarea").each(function() {
+// $(".time-block").each(function() {
 
-    // var noteInput = $("textarea");
-    // noteInput.text = noteInput;
-    // console.log(noteInput.text);
+//     $(this).on("click", "textarea", function() {
+//         // var isEdit = $(this).hasAttribute();
 
-    // tasks.push(noteInput);
-    // console.log(tasks);
+//         console.log(text);
 
-    // $(this).on("click", "textarea", function() {
-        // var isEdit = $(this).hasAttribute();
+//         // console.log(tasks);
+//         console.log(this);
 
-        // var noteInput = $("textarea").text();
-        // tasks.push(noteInput);
-        // console.log(tasks);
+//     })
 
-    // })
-
-    // var note = $(this).text().trim();
-    // var noteInput = $("textarea").addClass("description col-10").val(note);
-    // $(this).replaceWith(noteInput);
-})
+//     // var note = $(this).text().trim();
+//     // var noteInput = $("textarea").addClass("description col-10").val(note);
+//     // $(this).replaceWith(noteInput);
+// })
 
 // event.preventDefault();
 
 // after clicking the button, the info can save into localstorage 
-function saveContent() {
-    tasks.push(input.val());
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
-}
-// JSON.stringify(tasks)
-
-function loadContent() {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-}
 
 
-var saveBtn = $(".saveBtn").on("click", saveContent);
+
+var saveBtn = $(".saveBtn").on("click", function() {
+    var time = $(this).parent().attr("data-hour");
+    var input = $(this).siblings(".description").val();
+
+    localStorage.setItem(time, input);
+});
+
+// function loadContent() {
+//     tasks = JSON.parse(localStorage.getItem("tasks"));
+// }
+
 // var contentEl = $(".time-block").on("click", "textarea", enterContent);
 
 
 
-loadContent();
+// loadContent();
