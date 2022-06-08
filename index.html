@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <header class="jumbotron">
+    <header class="jumbotron text-center">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <!-- show date -->
@@ -32,7 +32,7 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <div class="row time-block" data-hour="9">
-        <div class="hour col-1">9AM</div>
+        <div class="hour col-1 pt-1">9AM</div>
         <textarea class="description col-10" data-text-id="9"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -40,7 +40,7 @@
       </div>  
 
       <div class="row time-block" data-hour="10">
-        <div class="hour col-1">10AM</div>
+        <div class="hour col-1 pt-1">10AM</div>
         <textarea class="description col-10" data-text-id="10"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -48,7 +48,7 @@
       </div> 
 
       <div class="row time-block" data-hour="11">
-        <div class="hour col-1">11AM</div>
+        <div class="hour col-1 pt-1">11AM</div>
         <textarea class="description col-10" data-text-id="11"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -56,7 +56,7 @@
       </div> 
 
       <div class="row time-block" data-hour="12">
-        <div class="hour col-1">12AM</div>
+        <div class="hour col-1 pt-1">12AM</div>
         <textarea class="description col-10" data-text-id="12"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -64,7 +64,7 @@
       </div> 
 
       <div class="row time-block" data-hour="13">
-        <div class="hour col-1">1PM</div>
+        <div class="hour col-1 pt-1">1PM</div>
         <textarea class="description col-10" data-text-id="13"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -72,7 +72,7 @@
       </div> 
 
       <div class="row time-block" data-hour="14">
-        <div class="hour col-1">2PM</div>
+        <div class="hour col-1 pt-1">2PM</div>
         <textarea class="description col-10" data-text-id="14"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -80,7 +80,7 @@
       </div> 
 
       <div class="row time-block" data-hour="15">
-        <div class="hour col-1">3PM</div>
+        <div class="hour col-1 pt-1">3PM</div>
         <textarea class="description col-10" data-text-id="15"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -88,7 +88,7 @@
       </div> 
 
       <div class="row time-block" data-hour="16">
-        <div class="hour col-1">4PM</div>
+        <div class="hour col-1 pt-1">4PM</div>
         <textarea class="description col-10" data-text-id="16"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
@@ -96,12 +96,16 @@
       </div> 
 
       <div class="row time-block" data-hour="17">
-        <div class="hour col-1">5PM</div>
+        <div class="hour col-1 pt-1">5PM</div>
         <textarea class="description col-10" data-text-id="17"></textarea>
         <div class="saveBtn col-1">
           <i class="fa-solid fa-floppy-disk"></i>
         </div>   
-      </div> 
+      </div>
+      
+      <div class="mt-3">
+        <p>Note: please immediately save any changes.</p>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

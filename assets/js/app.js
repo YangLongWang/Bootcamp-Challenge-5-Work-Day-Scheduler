@@ -1,8 +1,5 @@
 // day.js display date
 var dayNtime = $("#currentDay").text(dayjs().format('MMM D dddd, h:mmA'));
-var input = $("textarea");
-
-var tapid = 0;
 
 // according to time show different color block
 $(".time-block").each(function() {
@@ -25,45 +22,25 @@ $(".time-block").each(function() {
     }
 });
 
-// create content
-// $(".time-block").each(function() {
-
-//     $(this).on("click", "textarea", function() {
-//         // var isEdit = $(this).hasAttribute();
-
-//         console.log(text);
-
-//         // console.log(tasks);
-//         console.log(this);
-
-//     })
-
-//     // var note = $(this).text().trim();
-//     // var noteInput = $("textarea").addClass("description col-10").val(note);
-//     // $(this).replaceWith(noteInput);
-// })
-
-// event.preventDefault();
-
 // after clicking the button, the info can save into localstorage 
 var saveBtn = $(".saveBtn").on("click", function() {
     var time = $(this).parent().attr("data-hour");
     var input = $(this).siblings(".description").val();
-    if (!input) {
-        alert("Please enter something.");
-        time = "";        
-    } else {
+    
+    if (input) {
         alert("The text is saved!");
     }
+    
     localStorage.setItem(time, input);
 });
 
-// function loadContent() {
-//     tasks = JSON.parse(localStorage.getItem("tasks"));
-// }
+// load info
+function loadContent() {
+    $(".time-block").each(function() {
+        var text = $(this).attr("data-hour");
+        var load = localStorage.getItem(text);   
+        $(this).children(".description").val(load);     
+    })
+}
 
-// var contentEl = $(".time-block").on("click", "textarea", enterContent);
-
-
-
-// loadContent();
+loadContent();
